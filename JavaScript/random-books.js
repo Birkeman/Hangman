@@ -14,22 +14,23 @@ var names = [
     // "Carrie",
     // "Pet Sematary",
     "The Godfather"
-]
+];
 let underScores = [];
 let answer;
 let wrongLetters = [];
 let correctLetters = [];
 let mistakes = 0;
 let correct = 0;
+let space = 0;
 
 //WIN OR LOSE ALERT
 function WinLose(){
-    if(correct === answer.length){
+    if(correct + space === answer.length){
         document.querySelector('.js-modal-text').innerHTML = "CONGRATULATIONS! YOU WON!&#128512;";
         document.querySelector('.js-modal').style.display = "block";
     } else if(mistakes === 6){
-        document.querySelector('.js-modal').style.display = "block"
-    }
+        document.querySelector('.js-modal').style.display = "block";
+    };
 };
 //INFO BOX
 function infoBox(){
@@ -37,7 +38,7 @@ function infoBox(){
     setTimeout (function(){
         $('.info').fadeOut('slow');
     }, 3000);
-}
+};
 //CHECK IF INPUT IS LETTER
 function letter(keyCode) {
     return keyCode >= 65 && keyCode <= 90 || keyCode >= 97 && keyCode <= 122 ;
@@ -50,9 +51,16 @@ answer = names[Math.floor(Math.random() * names.length)].toUpperCase();
 function startGame(){
     //Print Underscores on screen
     for(var i = 0; i < answer.length; i++){
-        underScores.push('_');
-        document.querySelector('.js-word').textContent = underScores.join(" ");
-        
+        // underScores.push('_');
+        // document.querySelector('.js-word').textContent = underScores.join(" ");
+        if(answer[i] === ' '){
+            underScores.push("-");
+            space ++;
+        } else {
+            underScores.push('_');
+        }
+        document.querySelector('.js-word').textContent = underScores.join(' ');
+
     }
     //User Guesses
     document.addEventListener("keypress", function(event) {
@@ -66,8 +74,8 @@ function startGame(){
                         correct++;
                         underScores[i] = y;
                         //SOLVE HTML PRINT
-                        document.querySelector('.js-word').textContent = underScores.join(" ");
-                        WinLose()
+                        document.querySelector('.js-word').textContent = underScores.join(' ');
+                        WinLose();
                     };
                 };
                 //MISSED LETTERS, PRINT
@@ -76,7 +84,7 @@ function startGame(){
                     wrongLetters.push(y);
                     mistakes++;
                     document.querySelector('.js-missed').textContent = wrongLetters;
-                    drawHangman()
+                    drawHangman();
                     WinLose();
                 };
             } else{ //IF INPUT IS NOT LETTER
@@ -85,7 +93,7 @@ function startGame(){
             };
         } else{ //IF LETTER ALREADY ENTERED
             document.querySelector ('.info').innerHTML = "Letter already entered";
-            infoBox()
+            infoBox();
         };
     });
 };
