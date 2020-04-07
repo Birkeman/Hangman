@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="icon" type="image/ico" href="/Images/6.png">
+    <link type="text/css" href="/Styles/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/JavaScript/jquery.min.js"></script>
+</head>
+<body>
+    <div class="modal js-modal">
+        <div class="modal-content">
+            <span class="js-modal-text">Unfortunately you lost.&#128577</span>
+            <button class="js-modal-button">Play Again</button>
+        </div>
+    </div>
+    <header>
+        <h1> Hangman</h1>
+        <h3>Find the hidden book name - Enter a letter</h3>
+    </header>
+    <div class="main">
+        <div class="hangman">
+            <img class="images js-hangman-parts" src="/Images/0.png">
+        </div>
+        <div class="wrong">
+            <span>Wrong:</span>
+            <h3 class="missed js-missed">asdasdasdasd
+            </h3>
+        </div>
+    </div>
+    <div id="hidden" class="word">
+        <h3 class="js-word"></h3>
+    </div>
+    <div class="info">
+        <span>You have already entered this letter</span>
+    </div>
+    <script src="/JavaScript/hangman.js"></script>
+    <script src="/JavaScript/random-books.js"></script>
+</body>

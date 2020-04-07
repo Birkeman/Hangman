@@ -1,0 +1,35 @@
+@import 'modal';
+html{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+body{
+    width: 80%;
+    margin: 0 auto;
+}
+.main{
+    display: flex;
+    padding: 5%;
+}
+.hangman{
+    margin-left: 20%;
+    img{
+        width: 50%;
+    }
+}
+.wrong{
+    width: 20%;
+    text-align: right;
+    .missed{
+        margin: 0;
+    }
+}
+.info{
+    position: absolute;
+    background-color: #6e6e6e;
+    padding: 10px;
+    bottom: 0;
+    left: 40%;
+    display: none;
+}
