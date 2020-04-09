@@ -83,4 +83,13 @@ body {
   left: 40%;
   display: none;
 }
+
+.space {
+  color: white;
+  background-color: yellow;
+}
+
+.under {
+  color: blue;
+}
 /*# sourceMappingURL=style.css.map */
