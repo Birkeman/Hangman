@@ -14,13 +14,13 @@ var names = [
     "Carrie",
     "The Hunger Games",
     "Pet Sematary",
-    "The Godfather",
     "A Thousand Splendid Suns",
     "The Da Vinci Code",
     "The Shining",
     "Misery",
     "Gone with the Wind",
-    "Paper Towns"
+    "Paper Towns",
+    "The Godfather"
 ];
 let underScores = [];
 let answer;
@@ -35,14 +35,14 @@ document.querySelector('.js-missed').textContent = wrongLetters;
 
 //Pick Random Name
 answer = names[Math.floor(Math.random() * names.length)].toUpperCase();
-
+// answer = answer.replace(/ /g, " ");
 //Print Underscores on screen
 for(var i = 0; i < answer.length; i++){
     if(answer[i] === ' '){
-        underScores.push('-');
+        underScores.push(' ');
         space ++;
     } else {
         underScores.push('_');
     }
-    document.querySelector('.js-word').textContent = underScores.join(' ');
+    document.querySelector('.js-word').innerHTML = underScores.join('');
 }

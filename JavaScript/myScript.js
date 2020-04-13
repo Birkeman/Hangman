@@ -15,7 +15,7 @@ function startGame(){
                         correct++;
                         underScores[i] = y;
                         //SOLVE HTML PRINT
-                        document.querySelector('.js-word').textContent = underScores.join(' ');
+                        document.querySelector('.js-word').innerHTML = underScores.join('');
                         WinLose();
                     };
                 };

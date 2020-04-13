@@ -84,12 +84,8 @@ body {
   display: none;
 }
 
-.space {
-  color: white;
-  background-color: yellow;
-}
-
-.under {
-  color: blue;
+.word > h2 {
+  word-spacing: 10px;
+  letter-spacing: 5px;
 }
 /*# sourceMappingURL=style.css.map */
